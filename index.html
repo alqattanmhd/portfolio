@@ -444,7 +444,7 @@
   }
   .lightbox-panel {
     position: relative; z-index: 1;
-    width: min(960px, 100%); height: min(86vh, 100%);
+    width: min(620px, 92vw); height: min(72vh, 680px);
     display: flex; flex-direction: column;
     background: #0d0f15;
     border: 1px solid var(--hair-2);
@@ -1061,7 +1061,7 @@
     </div>
 
     <div class="social reveal d1">
-      <a class="social-link" href="/cdn-cgi/l/email-protection#c1acaea9a0acaca0a581a0adb0a0b5b5a0afefa5a4b7" aria-label="Email Mohammad">
+      <a class="social-link" href="/cdn-cgi/l/email-protection#58353730393535393c18393429392c2c3936763c3d2e" aria-label="Email Mohammad">
         <span class="ic">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         </span>
@@ -1095,6 +1095,23 @@
 </footer>
 </div>
 <!-- /page-body -->
+
+<!-- ───────── Certificate lightbox ───────── -->
+<div class="lightbox" id="certLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lightbox-backdrop" data-close></div>
+  <div class="lightbox-panel" role="document">
+    <div class="lightbox-bar">
+      <span class="lightbox-title" id="certLightboxTitle">Certificate</span>
+      <div class="lightbox-actions">
+        <a class="lightbox-btn" id="certLightboxOpen" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
+        <button class="lightbox-btn icon" data-close aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="lightbox-stage" id="certLightboxStage"></div>
+  </div>
+</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ───────── Typing animation ───────── */
