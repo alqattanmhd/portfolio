@@ -1,0 +1,9 @@
+# local-only dev / preview config
+.claude/
+.vscode/
+.idea/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
