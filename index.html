@@ -129,7 +129,7 @@
     mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
   }
 
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
 
   /* ───────── Nav (NEW — was missing entirely) ───────── */
   nav.top {
@@ -147,7 +147,7 @@
   nav.top .inner {
     display: flex; align-items: center; justify-content: space-between;
     gap: 16px;
-    height: 64px; max-width: 1080px; margin: 0 auto; padding: 0 32px;
+    height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 32px;
   }
   .brand {
     display: flex; align-items: center; gap: 12px;
@@ -208,12 +208,14 @@
 
   /* ───────── HERO (sticky landing curtain) ───────── */
   /* padding-top reserves space for the fixed nav (was on .hero-inner, but `.wrap`'s
-     padding shorthand in the mobile media query was wiping it out) */
+     padding shorthand in the mobile media query was wiping it out).
+     `safe center` vertically centers the content on tall viewports but falls back
+     to top-aligned if the content would overflow (e.g. phone in landscape). */
   .hero {
     position: sticky; top: 0;
     min-height: 100vh; min-height: 100dvh;
     padding: 100px 0 100px;
-    display: flex; align-items: flex-start;
+    display: flex; align-items: safe center;
     z-index: 0; overflow: hidden;
   }
   .hero-inner {
@@ -281,7 +283,7 @@
 
   .hero h1 {
     font-family: var(--sans); font-weight: 600;
-    font-size: clamp(56px, 9vw, 128px); line-height: 0.93;
+    font-size: clamp(56px, 9vw, 168px); line-height: 0.93;
     letter-spacing: -0.04em; margin: 32px 0 0;
     text-wrap: balance;
     font-variation-settings: "wght" 600;
@@ -348,7 +350,7 @@
   .sec-head .label .arrow { color: var(--fg-4); }
   .sec-head h2 {
     font-family: var(--sans); font-weight: 500;
-    font-size: clamp(32px, 4.2vw, 52px); line-height: 1.05;
+    font-size: clamp(32px, 4.2vw, 68px); line-height: 1.05;
     letter-spacing: -0.025em; color: var(--fg);
     margin: 0; max-width: 22ch;
     text-wrap: balance;
@@ -594,7 +596,7 @@
   }
   .footer-h {
     font-family: var(--sans); font-weight: 500;
-    font-size: clamp(36px, 6vw, 76px); letter-spacing: -0.03em; line-height: 1.04;
+    font-size: clamp(36px, 6vw, 96px); letter-spacing: -0.03em; line-height: 1.04;
     margin: 0 auto; max-width: 16ch;
     text-wrap: balance;
     font-variation-settings: "wght" 500;
@@ -677,7 +679,31 @@
     .hero h1, .sec-head h2, .proj-text h3, .footer-h { transition: none; }
   }
 
-  /* ───────── Responsive ───────── */
+  /* ───────── Large screens — scale up so the site doesn't huddle in a 1080px column ───────── */
+  @media (min-width: 1600px) {
+    .wrap { max-width: 1360px; padding: 0 48px; }
+    nav.top .inner { max-width: 1360px; padding: 0 48px; }
+    body { font-size: 16.5px; }
+    section.flow { padding: 88px 0 112px; }
+    .hero { padding: 120px 0 120px; }
+    .hero-lede { font-size: 21px; max-width: 60ch; margin-top: 56px; }
+    .about-prose p { font-size: 18px; line-height: 1.7; }
+    .about-prose { max-width: 68ch; }
+    .cert-row h3 { font-size: 24px; }
+    .footer-sub { font-size: 19px; max-width: 52ch; }
+    .proj-text p { font-size: 17px; }
+    .proj-main { gap: 72px; }
+  }
+  @media (min-width: 2200px) {
+    .wrap { max-width: 1520px; padding: 0 72px; }
+    nav.top .inner { max-width: 1520px; padding: 0 72px; }
+    body { font-size: 17px; }
+    section.flow { padding: 112px 0 140px; }
+    .hero { padding: 140px 0 140px; }
+    .hero-lede { font-size: 22px; }
+  }
+
+  /* ───────── Responsive (mobile/tablet) ───────── */
   @media (max-width: 880px) {
     .wrap { padding: 0 22px; }
     nav.top .inner { padding: 0 22px; }
