@@ -73,7 +73,10 @@
   }
   ::selection { background: rgba(52, 211, 153, 0.28); color: var(--fg); }
 
-  /* gradient text — applied to hero name, all heading italic accents, and prose em accents */
+  /* gradient text — applied to hero name, all heading italic accents, and prose em accents.
+     `padding-right` gives the italic slant / glyph ink room to render past the text-box edge
+     (otherwise background-clip:text cuts the last letter); `margin-right` compensates so the
+     following text/punctuation isn't pushed out of position. */
   .hero h1 .grad,
   .sec-head h2 em,
   .proj-text h3 em,
@@ -85,6 +88,15 @@
             background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    padding-right: 0.1em;
+    margin-right: -0.08em;
+  }
+  /* italic styling only on the em accents — keep the hero name upright (matches original) */
+  .sec-head h2 em,
+  .proj-text h3 em,
+  .footer-h em,
+  .about-prose p em,
+  .hero-lede em {
     font-style: italic;
   }
 
