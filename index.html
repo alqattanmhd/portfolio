@@ -41,9 +41,11 @@
     --hair:      rgba(235, 236, 240, 0.06);
     --hair-2:    rgba(235, 236, 240, 0.12);
     --hair-3:    rgba(235, 236, 240, 0.22);
-    --hair-hot:  rgba(244, 245, 247, 0.35);
-    --ink-1:     #f4f5f7;
-    --live:      #34d399;          /* the one accent — used for "alive" states only */
+    --hair-hot:  rgba(110, 231, 183, 0.35);
+    --ink-1:     #6ee7b7;          /* mint — gradient start, also project diagram accents */
+    --ink-2:     #38bdf8;          /* sky blue — gradient end */
+    --grad:      linear-gradient(135deg, var(--ink-1) 0%, var(--ink-2) 100%);
+    --live:      #34d399;          /* "alive" state indicators (availability dot, ticker, nav active) */
     --live-soft: rgba(52, 211, 153, 0.18);
     --live-glow: rgba(52, 211, 153, 0.55);
 
@@ -70,6 +72,21 @@
     overflow-x: hidden;
   }
   ::selection { background: rgba(52, 211, 153, 0.28); color: var(--fg); }
+
+  /* gradient text — applied to hero name, all heading italic accents, and prose em accents */
+  .hero h1 .grad,
+  .sec-head h2 em,
+  .proj-text h3 em,
+  .footer-h em,
+  .about-prose p em,
+  .hero-lede em {
+    background: var(--grad);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-style: italic;
+  }
 
   /* keyboard focus — visible everywhere, never removed */
   :focus { outline: none; }
@@ -291,7 +308,6 @@
   }
   .hero h1:hover { font-variation-settings: "wght" 680; }
   .hero h1 .last  { color: var(--fg-3); font-weight: 300; }
-  .hero h1 .name  { color: var(--fg); }
 
   .hero-meta {
     margin-top: 36px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
@@ -358,7 +374,7 @@
     transition: font-variation-settings 0.4s var(--ease-2);
   }
   .sec-head h2:hover { font-variation-settings: "wght" 560; }
-  .sec-head h2 em { font-style: italic; color: var(--fg-2); font-weight: 400; }
+  .sec-head h2 em { font-weight: 400; }   /* color/italic handled by the gradient rule */
 
   /* ───────── ABOUT ───────── */
   .about-grid { display: flex; flex-direction: column; gap: 40px; align-items: stretch; }
@@ -370,7 +386,7 @@
   }
   .about-prose p:last-child { margin-bottom: 0; }
   .about-prose p b { color: var(--fg); font-weight: 500; }
-  .about-prose p em { font-style: italic; color: var(--fg); font-weight: 400; }
+  .about-prose p em { font-weight: 400; }   /* color/italic handled by the gradient rule */
 
   .about-side {
     display: flex; flex-direction: row; flex-wrap: wrap; gap: 0;
@@ -417,7 +433,7 @@
   .cert-row:hover::before { opacity: 1; }
   .cert-row::after {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-    background: var(--live); transition: width 0.3s var(--ease);
+    background: var(--grad); transition: width 0.3s var(--ease);
   }
   .cert-row:first-child { padding-top: 0; }
   .cert-row:last-child { border-bottom: none; }
@@ -517,7 +533,7 @@
     transition: font-variation-settings 0.4s var(--ease-2);
   }
   .proj-text h3:hover { font-variation-settings: "wght" 560; }
-  .proj-text h3 em { font-style: italic; color: var(--fg); font-weight: 400; }
+  .proj-text h3 em { font-weight: 400; }   /* color/italic handled by the gradient rule */
   .proj-text p {
     color: var(--fg-2); font-size: 16px; line-height: 1.65; margin: 0 0 16px;
     text-wrap: pretty;
@@ -603,7 +619,7 @@
     transition: font-variation-settings 0.5s var(--ease-2);
   }
   .footer-h:hover { font-variation-settings: "wght" 580; }
-  .footer-h em { font-style: italic; color: var(--fg); font-weight: 400; }
+  .footer-h em { font-weight: 400; }   /* color/italic handled by the gradient rule */
   .footer-sub {
     margin: 26px auto 0; max-width: 48ch;
     color: var(--fg-2); font-size: 17px; line-height: 1.6;
@@ -793,8 +809,8 @@
     </div>
 
     <h1 class="reveal d1">
-      <span class="name">Mohammad</span><br/>
-      <span class="name">Alqattan</span><span class="last">.</span>
+      Mohammad<br/>
+      <span class="grad">Alqattan</span><span class="last">.</span>
     </h1>
 
     <div class="hero-meta reveal d2">
@@ -805,7 +821,7 @@
       A <b>cybersecurity graduate</b> from Penn State, focused on
       network forensics, security operations, and the small,
       hard problems hiding between packets. I build careful tools,
-      hunt anomalies, and write about what I find.
+      hunt anomalies, and write about <em>what I find</em>.
     </p>
   </div>
 
