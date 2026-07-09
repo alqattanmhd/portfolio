@@ -7,13 +7,13 @@
 <meta name="theme-color" content="#08090d" />
 
 <title>Mohammad Alqattan — Cybersecurity Analyst</title>
-<meta name="description" content="Cybersecurity graduate from Penn State '26 — network forensics, SOC operations, Python tooling, and clear technical writing. Based in Kuwait, available Summer 2026." />
+<meta name="description" content="Cybersecurity graduate from Penn State '26 (Cybersecurity Analytics & Operations, NSA IST Certificate) — digital forensics, malware analysis, incident response, and Python tooling. Based in Kuwait, available Summer 2026." />
 <meta name="author" content="Mohammad Alqattan" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Mohammad Alqattan — Cybersecurity Analyst" />
-<meta property="og:description" content="Cybersecurity graduate building careful, well-written security tools. Penn State '26 · Kuwait + remote · open to roles." />
+<meta property="og:description" content="Cybersecurity graduate from Penn State — digital forensics, malware analysis, incident response, Python tooling. NSA IST Certificate. Open to Summer 2026 roles." />
 <meta property="og:url" content="https://alqattanmhd.github.io/portfolio/" />
 <meta property="og:locale" content="en_US" />
 
@@ -602,6 +602,132 @@
   }
   .pill:hover { border-color: var(--hair-hot); color: var(--fg); background: rgba(244, 245, 247, 0.04); }
 
+  /* ───────── Compact work list (post-featured projects) ───────── */
+  .work-featured-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 56px 0 28px;
+    font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+    letter-spacing: 0.06em;
+  }
+  .work-featured-divider::before, .work-featured-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--hair);
+  }
+  .work-list { display: flex; flex-direction: column; }
+  .work-item {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 40px; align-items: start;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--hair);
+    position: relative;
+    transition: padding-left 0.3s var(--ease);
+    --mx: 50%; --my: 50%;
+  }
+  .work-item::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(300px circle at var(--mx) var(--my), rgba(110, 231, 183, 0.05), transparent 60%);
+    opacity: 0; transition: opacity 0.25s var(--ease);
+    pointer-events: none;
+  }
+  .work-item:hover::before { opacity: 1; }
+  .work-item::after {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+    background: var(--grad); transition: width 0.3s var(--ease);
+  }
+  .work-item:first-child { padding-top: 0; }
+  .work-item:last-child { border-bottom: none; }
+  .work-item:hover { padding-left: 18px; }
+  .work-item:hover::after { width: 2px; }
+  .work-item .work-meta {
+    font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+    letter-spacing: 0.04em; line-height: 1.6;
+  }
+  .work-item .work-meta b { color: var(--fg); font-weight: 500; }
+  .work-item .work-meta .divide { display: block; height: 1px; background: var(--hair); margin: 8px 0; }
+  .work-item h3 {
+    font-family: var(--sans); font-weight: 500;
+    font-size: clamp(20px, 2.2vw, 26px);
+    letter-spacing: -0.015em; line-height: 1.2;
+    margin: 0 0 12px; text-wrap: balance;
+  }
+  .work-item h3 em {
+    background: var(--grad);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    font-style: italic;
+    padding-right: 0.18em; margin-right: -0.14em;
+  }
+  .work-item p {
+    color: var(--fg-2); font-size: 15px; line-height: 1.65;
+    margin: 0 0 16px; max-width: 68ch; text-wrap: pretty;
+  }
+  .work-item p b { color: var(--fg); font-weight: 500; }
+  .work-item .tech-row { margin-top: 4px; }
+
+  /* ───────── Skills grid ───────── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+  .skill-group-label {
+    font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+    letter-spacing: 0.06em;
+    padding-bottom: 14px; margin-bottom: 18px;
+    border-bottom: 1px solid var(--hair);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .skill-group-label .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--ink-1);
+  }
+  .skill-group:nth-child(2) .skill-group-label .dot { background: var(--ink-2); }
+  .skill-group:nth-child(3) .skill-group-label .dot { background: var(--live); }
+  .skill-pills {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+
+  /* ───────── Honors strip (in Credentials section) ───────── */
+  .honors-h {
+    font-family: var(--mono); font-size: 11px; color: var(--fg-3);
+    letter-spacing: 0.06em;
+    margin: 40px 0 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .honors-h::after { content: ''; flex: 1; height: 1px; background: var(--hair); }
+  .honors-list { display: flex; flex-direction: column; }
+  .honor-item {
+    display: grid; grid-template-columns: 160px 1fr auto;
+    gap: 24px; align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .honor-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .honor-item:first-child { padding-top: 4px; }
+  .honor-item .honor-k {
+    font-family: var(--mono); font-size: 11.5px; color: var(--fg-3);
+    letter-spacing: 0;
+  }
+  .honor-item .honor-v {
+    font-size: 15px; color: var(--fg); line-height: 1.5;
+  }
+  .honor-item .honor-v .dim { color: var(--fg-3); }
+  .honor-item .honor-when {
+    font-family: var(--mono); font-size: 12px; color: var(--fg-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .honor-item .honor-when b { color: var(--fg); font-weight: 500; }
+
+  /* NSA cert badge — text substitute for icon slot */
+  .cert-ic.badge-nsa {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f1f5f9; padding: 0;
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  .cert-ic.badge-nsa span { display: block; line-height: 1; }
+  .cert-ic.badge-nsa .k { font-size: 12.5px; }
+  .cert-ic.badge-nsa .v { font-size: 8px; color: #94a3b8; margin-top: 2px; letter-spacing: 0; }
+
   /* ───────── Footer (closing + contact) ───────── */
   footer {
     padding: 84px 0 48px;
@@ -775,6 +901,17 @@
     .proj-main { gap: 36px; }
     .cert-row { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; }
     .cert-row h3 { font-size: 19px; }
+
+    /* mobile: stack the work-item meta above the content */
+    .work-item { grid-template-columns: 1fr; gap: 12px; padding: 26px 0; }
+    .work-item .work-meta .divide { display: none; }
+    .work-item h3 { font-size: 19px; }
+
+    /* mobile: skills stack to 1 column */
+    .skills-grid { grid-template-columns: 1fr; gap: 32px; }
+
+    /* mobile: honors stack */
+    .honor-item { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
     footer { padding: 72px 0 36px; }
     .social { gap: 12px; margin: 48px 0 56px; }
     .social-link { width: 72px; }
@@ -798,8 +935,9 @@
     </a>
     <div class="nav-mid" id="navMid">
       <a href="#about">about</a>
-      <a href="#certs">certifications</a>
-      <a href="#projects">work</a>
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#credentials">credentials</a>
       <a href="#contact">contact</a>
     </div>
     <div class="nav-right">
@@ -856,18 +994,20 @@
     <div class="about-grid">
       <div class="about-prose reveal d1">
         <p>
-          I'm a cybersecurity professional who graduated from
+          I'm a cybersecurity professional graduating from
           <b>Penn State University</b> after four years studying
-          <em>Cybersecurity Analytics &amp; Operations</em>. My coursework
-          spanned network defense, malware analysis, incident response, and
-          the kind of low-level packet work that makes Wireshark feel like
-          home.
+          <em>Cybersecurity Analytics &amp; Operations</em>, with a minor
+          in Security &amp; Risk Analysis and Penn State's
+          <b>NSA IST Certificate</b>. My coursework spanned digital
+          forensics, malware analysis, incident response, and the kind
+          of low-level packet work that makes Wireshark feel like home.
         </p>
         <p>
           I gravitate toward problems at the intersection of <b>code and
-          systems</b> — small Python tools that automate the boring parts
-          of analysis, scripting around SIEM data, and turning raw
-          captures into stories other people can read.
+          systems</b> — Python tools that automate the tedious parts of
+          analysis, machine-learning classifiers on real spam corpora,
+          Ghidra sessions on CrackMe binaries, and turning raw captures
+          into stories other people can read.
         </p>
         <p>
           Outside the terminal I write a lot: technical documentation,
@@ -879,7 +1019,7 @@
       <div class="about-side reveal d2">
         <div class="row">
           <span class="k">Education</span>
-          <span class="v">B.S. Cybersecurity<span class="small" style="display:block; margin-left:0;">Penn State '26</span></span>
+          <span class="v">B.S. Cybersecurity<span class="small" style="display:block; margin-left:0;">Penn State '26 · GPA 3.25</span></span>
         </div>
         <div class="row">
           <span class="k">Based in</span>
@@ -887,13 +1027,13 @@
         </div>
         <div class="row">
           <span class="k">Focus</span>
-          <span class="v">Network sec.<span class="small">forensics, SOC</span></span>
+          <span class="v">Digital forensics<span class="small">malware, SIEM</span></span>
         </div>
         <div class="row">
           <span class="k">Languages</span>
           <span class="v">
             <span class="lang">Arabic <span class="small">native</span></span><br/>
-            <span class="lang">English <span class="small">IELTS 6.5</span></span>
+            <span class="lang">English <span class="small">fluent · IELTS 6.5</span></span>
           </span>
         </div>
       </div>
@@ -901,53 +1041,33 @@
   </section>
 
   <!-- ───────── CERTIFICATIONS ───────── -->
-  <section class="flow" id="certs" aria-labelledby="certs-h">
+  <!-- ───────── SELECTED WORK ───────── -->
+  <section class="flow" id="work" aria-labelledby="work-h">
     <div class="sec-head reveal">
-      <div class="label"><span class="num">02</span><span class="arrow">→</span><span>certifications</span></div>
-      <h2 id="certs-h">Credentials &amp; <em>active</em> certifications.</h2>
+      <div class="label"><span class="num">02</span><span class="arrow">→</span><span>selected work</span></div>
+      <h2 id="work-h">Research, coursework, &amp; things I'm <em>proud of</em>.</h2>
     </div>
 
-    <div class="cert-list reveal d1" data-spotlight-group>
-      <a class="cert-row" href="assets/comptia-secplus.pdf"
-         data-cert="assets/comptia-secplus.pdf"
-         data-cert-title="CompTIA Security+ — SY0-701">
-        <h3><span class="cert-ic"><img src="assets/comptia-secplus.png" alt="CompTIA Security+ Certified badge" /></span> CompTIA Security+</h3>
-        <span class="org">Exam SY0-701 — risk management, threats, architecture, operations.</span>
-        <span class="when">Issued <b>Dec 2025</b></span>
-        <span class="status">Active</span>
-      </a>
-      <a class="cert-row" href="assets/cpr-aed.pdf"
-         data-cert="assets/cpr-aed.pdf"
-         data-cert-title="AHA Heartsaver CPR / AED">
-        <h3><span class="cert-ic"><img src="assets/aha-heartsaver.png" alt="American Heart Association logo" /></span> Heartsaver CPR / AED</h3>
-        <span class="org">American Heart Association — emergency cardiovascular care.</span>
-        <span class="when">Issued <b>May 2025</b></span>
-        <span class="status">Active</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ───────── PROJECTS ───────── -->
-  <section class="flow" id="projects" aria-labelledby="projects-h">
-    <div class="sec-head reveal">
-      <div class="label"><span class="num">03</span><span class="arrow">→</span><span>selected work</span></div>
-      <h2 id="projects-h">Things I've built that I'm <em>proud of</em>.</h2>
-    </div>
-
+    <!-- Featured project — Wireshark Lab research -->
     <div class="proj-body reveal d1">
       <article class="proj-main">
         <div class="proj-text">
           <h3>Personalized Wireshark <em>network analysis</em> lab system.</h3>
-          <p>
-            A Python system that uses <b>SHA-256 hashing</b> to dynamically
-            generate unique PCAP files per student, manipulating IP /
-            MAC addresses and port numbers so no two captures are alike.
+          <p style="font-family: var(--mono); font-size: 12px; color: var(--fg-3); letter-spacing: 0.04em; margin-bottom: 20px;">
+            Undergraduate Research Assistant · Advisor: Prof. Nicklaus Giacobe · Penn State, May – Jul 2026
           </p>
           <p>
-            Worked with real HTTP traffic captures, embedding identifiers
-            into <b>TCP streams</b> in a way that preserves protocol
-            integrity while giving instructors a reliable signal that
-            submitted work belongs to the student who claims it.
+            A <b>Python/Scapy</b> system that derives per-student PCAPs
+            deterministically from <b>SHA-256</b> hashes — rewriting TCP/IP,
+            HTTP, and DNS fields, embedding secrets in HTTP payloads with
+            Content-Length recalculation, and preserving stream integrity
+            via checksum + sequence/ACK cascade repair.
+          </p>
+          <p>
+            Deployed as a <b>CherryPy</b> web service serving personalized
+            labs, backed by 16 base traffic captures produced in a controlled
+            Linux (Ubuntu) / VMware environment with tuned TCP congestion
+            control (CUBIC + tc netem).
           </p>
           <div class="tech-row" style="margin-top: 22px;">
             <span class="pill">Python</span>
@@ -956,7 +1076,9 @@
             <span class="pill">PCAP</span>
             <span class="pill">TCP/IP</span>
             <span class="pill">HTTP</span>
-            <span class="pill">Wireshark</span>
+            <span class="pill">DNS</span>
+            <span class="pill">CherryPy</span>
+            <span class="pill">Linux</span>
           </div>
         </div>
 
@@ -985,6 +1107,214 @@
         </div>
       </article>
     </div>
+
+    <!-- 3 more work items (compact list) -->
+    <div class="work-featured-divider reveal d2">
+      <span>more coursework</span>
+    </div>
+
+    <div class="work-list reveal d2" data-spotlight-group>
+      <article class="work-item">
+        <div class="work-meta">
+          <b>CYBER 440</b><br/>Capstone<br/>Team of 6
+          <span class="divide"></span>
+          Jan – May 2026
+        </div>
+        <div>
+          <h3>Ransomware incident <em>investigation</em> across ~12M packets.</h3>
+          <p>
+            Six-person team investigation of a simulated municipal network
+            compromise. Traced a multi-stage insider attack across <b>~12M
+            packets in 41 PCAPs</b> — DCSync credential harvesting, SAMR
+            reconnaissance, IRC C2 beaconing, SMB2 ransomware — mapping every
+            step of the evidence to the Cyber Kill Chain.
+          </p>
+          <p>
+            Owned the <b>disk-image forensics</b> workstream (FTK): reconstructed
+            the initial compromise from USB registry artifacts, link files,
+            prefetch records, and email stores. Findings anchored the attack
+            timeline in the team's incident-response report.
+          </p>
+          <div class="tech-row">
+            <span class="pill">FTK</span>
+            <span class="pill">Volatility</span>
+            <span class="pill">Wireshark</span>
+            <span class="pill">TShark</span>
+            <span class="pill">Event Logs</span>
+            <span class="pill">Cyber Kill Chain</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item">
+        <div class="work-meta">
+          <b>CYBER 362</b><br/>Security Analytics
+          <span class="divide"></span>
+          Aug – Dec 2025
+        </div>
+        <div>
+          <h3>Spam &amp; phishing <em>classifiers</em> — ~97% accuracy on TREC07p.</h3>
+          <p>
+            Built classifiers in <b>Python/scikit-learn</b> using TF-IDF
+            feature extraction across logistic regression, decision-tree,
+            and neural-network models. Trained on the <b>~75,000-message
+            TREC07p</b> corpus and SMS Spam Collection; evaluated with
+            confusion matrices, precision, recall, and F1 across stratified
+            splits. Reached <b>~97%</b> classification accuracy on 1,115
+            held-out messages.
+          </p>
+          <p>
+            Companion SIEM work in <b>Splunk</b>: ingested and indexed
+            event datasets, wrote SPL searches enriched with lookup tables,
+            and built interactive reports, charts, and dashboards.
+          </p>
+          <div class="tech-row">
+            <span class="pill">Python</span>
+            <span class="pill">scikit-learn</span>
+            <span class="pill">TF-IDF</span>
+            <span class="pill">pandas</span>
+            <span class="pill">Splunk</span>
+            <span class="pill">SPL</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item">
+        <div class="work-meta">
+          <b>CYBER 366</b><br/>Malware Analytics
+          <span class="divide"></span>
+          Aug – Dec 2025
+        </div>
+        <div>
+          <h3>Malware analysis &amp; <em>reverse engineering</em> in Ghidra.</h3>
+          <p>
+            Static and dynamic analysis of live samples in isolated
+            <b>Windows VMs</b>: MD5 hashing and VirusTotal triage,
+            strings/FLOSS extraction, PEiD packer detection with UPX
+            unpacking, DLL import inspection, and registry monitoring.
+          </p>
+          <p>
+            Reverse-engineered <b>four CrackMe binaries in Ghidra</b>,
+            recovering embedded authentication logic from disassembly to
+            defeat password checks; used debuggers to trace and control
+            malware execution paths safely at runtime. Reconstructed
+            real-world infection chains from PCAPs — victim hosts, download
+            URLs, C2 IPs — and co-presented the REMnux toolkit
+            (Detect It Easy, CyberChef, edb) to the class.
+          </p>
+          <div class="tech-row">
+            <span class="pill">Ghidra</span>
+            <span class="pill">PEiD</span>
+            <span class="pill">UPX</span>
+            <span class="pill">FLOSS</span>
+            <span class="pill">Volatility</span>
+            <span class="pill">REMnux</span>
+            <span class="pill">Windows VM</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────── SKILLS ───────── -->
+  <section class="flow" id="skills" aria-labelledby="skills-h">
+    <div class="sec-head reveal">
+      <div class="label"><span class="num">03</span><span class="arrow">→</span><span>skills</span></div>
+      <h2 id="skills-h">What I work with, <em>day to day</em>.</h2>
+    </div>
+
+    <div class="skills-grid reveal d1">
+      <div class="skill-group">
+        <div class="skill-group-label"><span class="dot"></span>Security &amp; Analysis</div>
+        <div class="skill-pills">
+          <span class="pill">Network Security</span>
+          <span class="pill">Digital Forensics</span>
+          <span class="pill">Malware Analysis</span>
+          <span class="pill">Incident Response</span>
+          <span class="pill">SIEM (Splunk)</span>
+          <span class="pill">Risk Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label"><span class="dot"></span>Networking</div>
+        <div class="skill-pills">
+          <span class="pill">Wireshark</span>
+          <span class="pill">TShark</span>
+          <span class="pill">PCAP Analysis</span>
+          <span class="pill">Packet Manipulation</span>
+          <span class="pill">TCP/IP</span>
+          <span class="pill">HTTP</span>
+          <span class="pill">DNS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label"><span class="dot"></span>Programming &amp; Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Python</span>
+          <span class="pill">Scapy</span>
+          <span class="pill">scikit-learn</span>
+          <span class="pill">pandas</span>
+          <span class="pill">CherryPy</span>
+          <span class="pill">Java</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Linux</span>
+          <span class="pill">VMware</span>
+          <span class="pill">iptables</span>
+          <span class="pill">Ghidra</span>
+          <span class="pill">FTK</span>
+          <span class="pill">Volatility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CREDENTIALS & HONORS ───────── -->
+  <section class="flow" id="credentials" aria-labelledby="credentials-h">
+    <div class="sec-head reveal">
+      <div class="label"><span class="num">04</span><span class="arrow">→</span><span>credentials &amp; honors</span></div>
+      <h2 id="credentials-h">Credentials &amp; <em>active</em> certifications.</h2>
+    </div>
+
+    <div class="cert-list reveal d1" data-spotlight-group>
+      <a class="cert-row" href="https://cybersecurity.psu.edu/undergraduate/certificate/" target="_blank" rel="noopener">
+        <h3><span class="cert-ic badge-nsa"><span><span class="k">NSA</span><span class="v">IST</span></span></span> NSA IST Certificate</h3>
+        <span class="org">Penn State CAE-IA — cybersecurity coursework meeting NSA Center for Academic Excellence standards.</span>
+        <span class="when">Awarded <b>2026</b></span>
+        <span class="status">Active</span>
+      </a>
+      <a class="cert-row" href="assets/comptia-secplus.pdf"
+         data-cert="assets/comptia-secplus.pdf"
+         data-cert-title="CompTIA Security+ — SY0-701">
+        <h3><span class="cert-ic"><img src="assets/comptia-secplus.png" alt="CompTIA Security+ Certified badge" /></span> CompTIA Security+</h3>
+        <span class="org">Exam SY0-701 — risk management, threats, architecture, operations.</span>
+        <span class="when">Issued <b>Dec 2025</b></span>
+        <span class="status">Active</span>
+      </a>
+      <a class="cert-row" href="assets/cpr-aed.pdf"
+         data-cert="assets/cpr-aed.pdf"
+         data-cert-title="AHA Heartsaver CPR / AED">
+        <h3><span class="cert-ic"><img src="assets/aha-heartsaver.png" alt="American Heart Association logo" /></span> Heartsaver CPR / AED</h3>
+        <span class="org">American Heart Association — emergency cardiovascular care.</span>
+        <span class="when">Issued <b>May 2025</b></span>
+        <span class="status">Active</span>
+      </a>
+    </div>
+
+    <div class="honors-h reveal d2">honors &amp; awards</div>
+    <div class="honors-list reveal d2">
+      <div class="honor-item">
+        <span class="honor-k">Scholarship</span>
+        <span class="honor-v">Government Scholarship — <span class="dim">Ministry of Higher Education, Kuwait</span></span>
+        <span class="honor-when"><b>2022 – 2026</b></span>
+      </div>
+      <div class="honor-item">
+        <span class="honor-k">Dean's List</span>
+        <span class="honor-v">Recognized <b>4×</b> <span class="dim">— Fall '23, Summer '24, Summer '25, Spring '26</span></span>
+        <span class="honor-when">Penn State</span>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -992,7 +1322,7 @@
 <footer id="contact" aria-labelledby="contact-h">
   <div class="wrap footer-inner">
     <div class="footer-cta reveal">
-      <div class="label"><span class="num">04</span><span>contact</span></div>
+      <div class="label"><span class="num">05</span><span>contact</span></div>
       <h2 class="footer-h" id="contact-h">Let's build something <em>thoughtful</em>.</h2>
       <p class="footer-sub">
         Open to SOC analyst, security engineering, and threat detection
